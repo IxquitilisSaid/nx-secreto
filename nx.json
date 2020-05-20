@@ -18,5 +18,31 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "ngx-videogular": {
+      "tags": []
+    },
+    "ngx-videogular-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ngx-videogular"]
+    },
+    "vg-core": {
+      "tags": []
+    },
+    "vg-ima-ads": {
+      "tags": []
+    },
+    "vg-overlay-play": {
+      "tags": []
+    },
+    "vg-buffering": {
+      "tags": []
+    },
+    "vg-streaming": {
+      "tags": []
+    },
+    "vg-controls": {
+      "tags": []
+    }
+  }
 }

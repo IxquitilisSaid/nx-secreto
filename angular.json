@@ -1,7 +1,335 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "ngx-videogular": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/ngx-videogular",
+      "sourceRoot": "apps/ngx-videogular/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ngx-videogular",
+            "index": "apps/ngx-videogular/src/index.html",
+            "main": "apps/ngx-videogular/src/main.ts",
+            "polyfills": "apps/ngx-videogular/src/polyfills.ts",
+            "tsConfig": "apps/ngx-videogular/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ngx-videogular/src/favicon.ico",
+              "apps/ngx-videogular/src/assets"
+            ],
+            "styles": ["apps/ngx-videogular/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngx-videogular/src/environments/environment.ts",
+                  "with": "apps/ngx-videogular/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-videogular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-videogular:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-videogular:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ngx-videogular/tsconfig.app.json",
+              "apps/ngx-videogular/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/ngx-videogular/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/ngx-videogular/src/test.ts",
+            "tsConfig": "apps/ngx-videogular/tsconfig.spec.json",
+            "karmaConfig": "apps/ngx-videogular/karma.conf.js",
+            "polyfills": "apps/ngx-videogular/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "ngx-videogular-e2e": {
+      "root": "apps/ngx-videogular-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/ngx-videogular-e2e/protractor.conf.js",
+            "devServerTarget": "ngx-videogular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-videogular:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/ngx-videogular-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/ngx-videogular-e2e/**"]
+          }
+        }
+      }
+    },
+    "vg-core": {
+      "projectType": "library",
+      "root": "libs/vg-core",
+      "sourceRoot": "libs/vg-core/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-core/tsconfig.lib.json",
+              "libs/vg-core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-core/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-core/src/test.ts",
+            "tsConfig": "libs/vg-core/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-core/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vg-ima-ads": {
+      "projectType": "library",
+      "root": "libs/vg-ima-ads",
+      "sourceRoot": "libs/vg-ima-ads/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-ima-ads/tsconfig.lib.json",
+              "libs/vg-ima-ads/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-ima-ads/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-ima-ads/src/test.ts",
+            "tsConfig": "libs/vg-ima-ads/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-ima-ads/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vg-overlay-play": {
+      "projectType": "library",
+      "root": "libs/vg-overlay-play",
+      "sourceRoot": "libs/vg-overlay-play/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-overlay-play/tsconfig.lib.json",
+              "libs/vg-overlay-play/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-overlay-play/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-overlay-play/src/test.ts",
+            "tsConfig": "libs/vg-overlay-play/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-overlay-play/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vg-buffering": {
+      "projectType": "library",
+      "root": "libs/vg-buffering",
+      "sourceRoot": "libs/vg-buffering/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-buffering/tsconfig.lib.json",
+              "libs/vg-buffering/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-buffering/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-buffering/src/test.ts",
+            "tsConfig": "libs/vg-buffering/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-buffering/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vg-streaming": {
+      "projectType": "library",
+      "root": "libs/vg-streaming",
+      "sourceRoot": "libs/vg-streaming/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-streaming/tsconfig.lib.json",
+              "libs/vg-streaming/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-streaming/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-streaming/src/test.ts",
+            "tsConfig": "libs/vg-streaming/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-streaming/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vg-controls": {
+      "projectType": "library",
+      "root": "libs/vg-controls",
+      "sourceRoot": "libs/vg-controls/src",
+      "prefix": "ngx-videogular",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vg-controls/tsconfig.lib.json",
+              "libs/vg-controls/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vg-controls/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/vg-controls/src/test.ts",
+            "tsConfig": "libs/vg-controls/tsconfig.spec.json",
+            "karmaConfig": "libs/vg-controls/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "karma"
+    },
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    },
+    "@schematics/angular:library": {
+      "styleext": "scss"
+    }
+  },
+  "defaultProject": "ngx-videogular"
 }
