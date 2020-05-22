@@ -8,9 +8,8 @@ describe('VgTimeDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VgTimeDisplayComponent ]
-    })
-    .compileComponents();
+      declarations: [VgTimeDisplayComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

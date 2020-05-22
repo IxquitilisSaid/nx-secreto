@@ -8,9 +8,8 @@ describe('VgFullscreenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VgFullscreenComponent ]
-    })
-    .compileComponents();
+      declarations: [VgFullscreenComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
