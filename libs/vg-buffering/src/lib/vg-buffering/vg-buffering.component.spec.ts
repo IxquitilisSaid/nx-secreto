@@ -1,25 +1,47 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ElementRef } from '@angular/core';
 import { VgBufferingComponent } from './vg-buffering.component';
+import { VgApiService } from '@ngx-videogular/vg-core';
 
-describe('VgBufferingComponent', () => {
-  let component: VgBufferingComponent;
-  let fixture: ComponentFixture<VgBufferingComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ VgBufferingComponent ]
-    })
-    .compileComponents();
-  }));
+describe('Buffering', () => {
+  let vgBuffering: VgBufferingComponent;
+  let ref: ElementRef;
+  let api: VgApiService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VgBufferingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    ref = {
+      nativeElement: {
+        getAttribute: (name) => {
+          return name;
+        },
+      },
+    };
+
+    api = new VgApiService();
+    vgBuffering = new VgBufferingComponent(ref, api);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('onPlayerReady', () => {
+    it('should subscribe to bufferDetected media events', () => {
+      spyOn(api, 'getMediaById').and.returnValue(<any>{
+        subscriptions: {
+          bufferDetected: { subscribe: jasmine.createSpy('bufferDetected') },
+        },
+      });
+      vgBuffering.onPlayerReady();
+      expect(
+        vgBuffering.target.subscriptions.bufferDetected.subscribe
+      ).toHaveBeenCalled();
+    });
+  });
+
+  describe('isBuffering', () => {
+    it('should show if buffer is detected', () => {
+      vgBuffering.onUpdateBuffer(true);
+      expect(vgBuffering.isBuffering).toBe(true);
+    });
+    it('should hide if buffer is not detected', () => {
+      vgBuffering.onUpdateBuffer(false);
+      expect(vgBuffering.isBuffering).toBe(false);
+    });
   });
 });

@@ -2,6 +2,10 @@
   "name": "ngx-videogular",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Jaime Oliveira",
+    "email": "jaime.amo18@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "nx": "nx",

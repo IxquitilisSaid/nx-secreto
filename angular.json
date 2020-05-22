@@ -10,7 +10,7 @@
       },
       "root": "apps/ngx-videogular",
       "sourceRoot": "apps/ngx-videogular/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -129,7 +129,7 @@
       "projectType": "library",
       "root": "libs/vg-core",
       "sourceRoot": "libs/vg-core/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -160,7 +160,7 @@
       "projectType": "library",
       "root": "libs/vg-ima-ads",
       "sourceRoot": "libs/vg-ima-ads/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -191,7 +191,7 @@
       "projectType": "library",
       "root": "libs/vg-overlay-play",
       "sourceRoot": "libs/vg-overlay-play/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -222,7 +222,7 @@
       "projectType": "library",
       "root": "libs/vg-buffering",
       "sourceRoot": "libs/vg-buffering/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -253,7 +253,7 @@
       "projectType": "library",
       "root": "libs/vg-streaming",
       "sourceRoot": "libs/vg-streaming/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -284,7 +284,7 @@
       "projectType": "library",
       "root": "libs/vg-controls",
       "sourceRoot": "libs/vg-controls/src",
-      "prefix": "ngx-videogular",
+      "prefix": "vg",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",

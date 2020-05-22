@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "ngxVideogular", "camelCase"],
-    "component-selector": [true, "element", "ngx-videogular", "kebab-case"]
+    "directive-selector": [true, "attribute", "vg", "camelCase"],
+    "component-selector": [true, "element", "vg", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]
