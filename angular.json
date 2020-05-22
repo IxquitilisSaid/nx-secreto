@@ -131,6 +131,18 @@
       "sourceRoot": "libs/vg-core/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-core/tsconfig.lib.json",
+            "project": "libs/vg-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-core/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -162,6 +174,18 @@
       "sourceRoot": "libs/vg-ima-ads/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-ima-ads/tsconfig.lib.json",
+            "project": "libs/vg-ima-ads/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-ima-ads/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -193,6 +217,18 @@
       "sourceRoot": "libs/vg-overlay-play/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-overlay-play/tsconfig.lib.json",
+            "project": "libs/vg-overlay-play/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-overlay-play/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -224,6 +260,18 @@
       "sourceRoot": "libs/vg-buffering/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-buffering/tsconfig.lib.json",
+            "project": "libs/vg-buffering/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-buffering/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -255,6 +303,18 @@
       "sourceRoot": "libs/vg-streaming/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-streaming/tsconfig.lib.json",
+            "project": "libs/vg-streaming/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-streaming/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -286,6 +346,18 @@
       "sourceRoot": "libs/vg-controls/src",
       "prefix": "vg",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/vg-controls/tsconfig.lib.json",
+            "project": "libs/vg-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/vg-controls/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
